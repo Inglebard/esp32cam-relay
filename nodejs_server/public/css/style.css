@@ -1,0 +1,141 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+
+.alert-danger {
+  max-width: 500px;
+  margin: auto;
+  background-color: red;
+  padding: 20px;
+}
+.alert-danger {
+  background-color: red;
+}
+.tcenter {
+  text-align: center;
+}
+.ib {
+  display: inline-block;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+
+.green_circle
+{
+  background-color: green;
+}
+.yellow_circle
+{
+  background-color: orange;  
+}
+.red_circle
+{
+  background-color: red;  
+}
+
+
+
+.page_login,
+.page_display {
+  background-color:#0069d8;
+  color: #FFFFFF;
+}
+
+.page_display .listing_container_wrapper {
+  width: 500px;
+  max-width: 100%;
+  margin: 50px auto;
+}
+
+.page_display .iotObj
+{
+  background: #FFFFFF;
+  color: #253858;
+  border:1px solid #FFFFFF;
+  margin:10px;
+  border-radius: 5px;
+  padding: 10px;  
+}
+.page_display .iotObj .iotObj_inner
+{
+  padding-right: 40px;  
+  position: relative;
+}
+
+.page_display .iotObj .name
+{
+  font-size:18px;
+  font-weight: bold;
+}
+
+.page_display .iotObj .lastseen
+{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.page_display .iotObj .location,
+.page_display .iotObj .type
+{
+  font-size:12px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  
+}
+
+.page_display .iotObj .description
+{
+}
+
+.page_display .iotObj .actions {
+  position: absolute;
+  right: 0;
+  width: 40px;
+  top: 0;
+}
+.page_display .iotObj .actions .delete {
+  width:40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #0074e0;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M 8.9887248,7.8764193 21.011275,19.876419 m -12.0225502,0 L 21.011275,7.8764193'/%3E%3C/svg%3E");
+  background-position-y: 1px;
+}
+
+
+
+.page_login .jumbotron
+{
+  padding: 10px;
+  max-width: 500px;
+  background-color: #FAFAFA;
+  border: 1px solid #E7E7E7;
+  margin: 50px auto;
+  color:#000000;
+}
+
+.page_login .jumbotron label
+{
+  display: none;
+}
+.page_login .jumbotron .form-control
+{
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+.page_login .jumbotron button
+{
+  padding: 5px;
+  border-radius: 2px;
+  background-color: #0074e0;
+  color:#FFFFFF;
+  border: none;
+}

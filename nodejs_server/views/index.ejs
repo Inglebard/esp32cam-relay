@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<%- include('./partials/head.ejs') %>
+<body class="page_display">
+	<div class="main_content">
+		<div class="page_title"><h1 class="tcenter">Camera relay</h1></div>
+		<div class="tcenter">
+			<canvas id="canvas" width="300" height="300">
+			  Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;.
+			</canvas>
+		</div>
+	</div>
+	
+	<script>
+	var portStr="";
+	if(location.port != "")
+	{
+		portStr=":"+location.port;
+	}
+	console.log('wss://' + location.hostname + portStr+"/jpgstream_client");
+	var ws = new WebSocket('wss://' + location.hostname + portStr+"/jpgstream_client");	
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+	
+	var img = new Image();
+	img.onload = function() {
+	    ctx.drawImage(this, 0, 0);
+	}
+	
+	ws.onmessage = function(message) {	
+		var url = URL.createObjectURL(message.data);
+		img.src = url;		
+	};
+
+
+
+	</script>
+</body>
+</html>
