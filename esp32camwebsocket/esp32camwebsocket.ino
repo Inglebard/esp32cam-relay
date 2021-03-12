@@ -89,7 +89,7 @@ void setupCamera()
     
     config.frame_size = FRAMESIZE_VGA; // FRAMESIZE_ + QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
     config.jpeg_quality = 10;
-    config.fb_count = 2;
+    config.fb_count = 1;
   
     // Init Camera
     esp_err_t err = esp_camera_init(&config);

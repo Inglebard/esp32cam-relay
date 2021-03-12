@@ -5,7 +5,7 @@
 	<div class="main_content">
 		<div class="page_title"><h1 class="tcenter">Camera relay</h1></div>
 		<div class="tcenter">
-			<canvas id="canvas" width="300" height="300">
+			<canvas id="canvas">
 			  Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;.
 			</canvas>
 		</div>
@@ -24,7 +24,12 @@
 	
 	var img = new Image();
 	img.onload = function() {
-	    ctx.drawImage(this, 0, 0);
+			canvas.style.width=this.width+'px';
+			canvas.style.height=this.height+'px';
+			ctx.drawImage(this, 0, 0, this.width,    this.height,     // source rectangle
+                   0, 0, canvas.width, canvas.height); // destination rectangle
+
+
 	}
 	
 	ws.onmessage = function(message) {	
