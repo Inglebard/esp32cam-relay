@@ -17,8 +17,12 @@
 	{
 		portStr=":"+location.port;
 	}
-	console.log('wss://' + location.hostname + portStr+"/jpgstream_client");
-	var ws = new WebSocket('wss://' + location.hostname + portStr+"/jpgstream_client");	
+	var protocolStr="ws";
+	if (location.protocol === 'https:') {
+		var protocolStr="wss";
+	}
+	console.log(protocolStr+'://' + location.hostname + portStr+"/jpgstream_client");
+	var ws = new WebSocket(protocolStr+'://' + location.hostname + portStr+"/jpgstream_client");	
 	var canvas = document.getElementById('canvas');
 	var ctx = canvas.getContext('2d');
 	
