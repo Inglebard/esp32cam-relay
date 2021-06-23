@@ -19,7 +19,7 @@
 	}
 	var protocolStr="ws";
 	if (location.protocol === 'https:') {
-		var protocolStr="wss";
+		protocolStr="wss";
 	}
 	console.log(protocolStr+'://' + location.hostname + portStr+"/jpgstream_client");
 	var ws = new WebSocket(protocolStr+'://' + location.hostname + portStr+"/jpgstream_client");	
