@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<%- include('./partials/head.ejs') %>
+<body class="page_display">
+	<div class="main_content">
+		<div class="page_title"><h1 class="tcenter">Camera relay</h1></div>
+		<div class="tcenter">
+			<canvas id="canvas">
+			  Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;.
+			</canvas>
+		</div>
+	</div>
+	
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+
+	const socket = io();
+	
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+	
+	var img = new Image();
+	img.onload = function() {
+			canvas.style.width=this.width+'px';
+			canvas.style.height=this.height+'px';
+			ctx.drawImage(this, 0, 0, this.width,    this.height,     // source rectangle
+                   0, 0, canvas.width, canvas.height); // destination rectangle
+
+
+	}
+	
+
+	socket.on('jpgstream_clientio', function(message) {
+		console.log(message);		
+		var blob = new Blob([message], {type: "image/jpeg"}); // set proper mime-type
+
+		var domURL = self.URL || self.webkitURL || self,
+		url = domURL.createObjectURL(blob);
+		img.src = url;	
+});
+
+
+
+	</script>
+</body>
+</html>
